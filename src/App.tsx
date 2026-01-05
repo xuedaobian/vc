@@ -32,14 +32,6 @@ function App() {
     return toolsData.categories.find((cat) => cat.id === id);
   };
 
-  const toolCountByCategory = useMemo(() => {
-    const counts: Record<string, number> = {};
-    toolsData.tools.forEach((tool) => {
-      counts[tool.category] = (counts[tool.category] || 0) + 1;
-    });
-    return counts;
-  }, []);
-
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
       <Header />
@@ -51,7 +43,7 @@ function App() {
             探索 AI 编码工具的新世界
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            收录 {toolsData.tools.length} 款 Vibe Coding 工具，帮助你找到最适合的 AI 编程助手
+            Vibe Coding 工具聚合，帮助你找到最适合的 AI 编程助手
           </p>
           <p className="text-sm text-gray-500 dark:text-gray-500 mt-2">
             最后更新: {toolsData.lastUpdated}
@@ -70,23 +62,6 @@ function App() {
             selected={selectedCategory}
             onSelect={setSelectedCategory}
           />
-        </div>
-
-        {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
-          {toolsData.categories.map((category) => (
-            <div
-              key={category.id}
-              className="bg-white dark:bg-gray-900 rounded-xl p-4 border border-gray-200 dark:border-gray-800 text-center"
-            >
-              <div className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
-                {toolCountByCategory[category.id] || 0}
-              </div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">
-                {category.name}
-              </div>
-            </div>
-          ))}
         </div>
 
         {/* Results Info */}

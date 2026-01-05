@@ -1,5 +1,5 @@
 import { clsx } from 'clsx';
-import { Code, Bot, Cloud, Terminal, Search, LayoutGrid } from 'lucide-react';
+import { Code, Bot, Cloud, Terminal, Search, LayoutGrid, Box } from 'lucide-react';
 import type { Category } from '../types';
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -8,6 +8,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   cloud: Cloud,
   terminal: Terminal,
   search: Search,
+  box: Box,
 };
 
 interface CategoryFilterProps {

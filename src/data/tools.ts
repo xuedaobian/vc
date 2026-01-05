@@ -32,6 +32,12 @@ export const toolsData: ToolsData = {
       name: "代码审查工具",
       description: "AI驱动的代码审查和质量工具",
       icon: "search"
+    },
+    {
+      id: "other",
+      name: "其他工具",
+      description: "任务管理、文档生成等辅助工具",
+      icon: "box"
     }
   ],
   tools: [
@@ -643,6 +649,385 @@ export const toolsData: ToolsData = {
       founded: "2023",
       company: "CodeRabbit",
       funding: "$88M total ($60M Series B 2025)"
+    },
+    {
+      id: "codebuddy",
+      name: "CodeBuddy IDE",
+      category: "ide",
+      description: "腾讯云推出的AI IDE，支持Craft模式自主编码，国内首个支持MCP协议的编程助手",
+      website: "https://www.codebuddy.ai",
+      logo: "codebuddy.svg",
+      features: [
+        "Craft模式自主Agent编码",
+        "对话即编程",
+        "腾讯混元大模型驱动",
+        "MCP协议支持",
+        "IDE/插件/CLI三形态"
+      ],
+      pricing: {
+        free: {
+          name: "Free",
+          price: 0,
+          features: ["国内版DeepSeek无限使用", "国际版GPT/Gemini支持"]
+        }
+      },
+      tags: ["chinese", "tencent", "free"],
+      founded: "2025",
+      company: "Tencent"
+    },
+    {
+      id: "gemini-code-assist",
+      name: "Gemini Code Assist",
+      category: "assistant",
+      description: "Google推出的AI编码助手，基于Gemini 2.5模型，支持多种IDE和企业级定制",
+      website: "https://codeassist.google",
+      logo: "gemini.svg",
+      features: [
+        "Gemini 2.5模型驱动",
+        "代码补全和生成",
+        "支持VSCode/JetBrains/Android Studio",
+        "企业代码库定制",
+        "源代码引用"
+      ],
+      pricing: {
+        free: {
+          name: "Individual",
+          price: 0,
+          features: ["免费使用", "无需信用卡"]
+        },
+        pro: {
+          name: "Standard",
+          price: 23,
+          period: "user/month",
+          features: ["企业级安全"]
+        },
+        enterprise: {
+          name: "Enterprise",
+          price: 75,
+          period: "user/month",
+          features: ["私有代码库定制", "高级集成"]
+        }
+      },
+      tags: ["google", "enterprise", "gemini"],
+      founded: "2024",
+      company: "Google"
+    },
+    {
+      id: "tongyi-lingma",
+      name: "通义灵码",
+      category: "assistant",
+      description: "阿里云AI编码助手，基于Qwen3-Coder模型，免费不限量，支持256K上下文",
+      website: "https://tongyi.aliyun.com/lingma",
+      logo: "tongyi.svg",
+      features: [
+        "Qwen3-Coder模型",
+        "256K原生上下文",
+        "智能代码补全",
+        "自然语言生成代码",
+        "单元测试生成"
+      ],
+      pricing: {
+        free: {
+          name: "Free",
+          price: 0,
+          features: ["完全免费", "不限量使用"]
+        }
+      },
+      tags: ["chinese", "alibaba", "free"],
+      founded: "2023",
+      company: "Alibaba"
+    },
+    {
+      id: "roocode",
+      name: "Roo Code",
+      category: "assistant",
+      description: "开源多模式AI编码Agent，支持Code/Architect/Debug等模式，可自定义工作流",
+      website: "https://roocode.com",
+      logo: "roocode.svg",
+      features: [
+        "多模式工作流(Code/Architect/Debug)",
+        "Boomerang任务协调",
+        "自定义Agent模式",
+        "终端和浏览器自动化",
+        "支持400+模型"
+      ],
+      pricing: {
+        free: {
+          name: "开源免费",
+          price: 0,
+          features: ["完全开源", "自带API密钥"]
+        }
+      },
+      tags: ["open-source", "multi-mode", "agent"],
+      founded: "2024",
+      company: "Roo Code (开源)"
+    },
+    {
+      id: "kilo-code",
+      name: "Kilo Code",
+      category: "assistant",
+      description: "开源AI编码助手，融合Roo Code和Cline优点，提供$20免费额度，支持MCP",
+      website: "https://kilocode.ai",
+      logo: "kilocode.svg",
+      features: [
+        "多步骤规划和错误恢复",
+        "Memory Bank持久化记忆",
+        "代码库语义索引",
+        "MCP Server集成",
+        "终端/浏览器自动化"
+      ],
+      pricing: {
+        free: {
+          name: "Free",
+          price: 0,
+          features: ["$20免费额度", "按API实际费用计费"]
+        }
+      },
+      tags: ["open-source", "byok", "agent"],
+      founded: "2025",
+      company: "Kilo Code"
+    },
+    {
+      id: "qoder",
+      name: "Qoder",
+      category: "ide",
+      description: "阿里巴巴推出的Agentic IDE，支持Agent和Quest两种模式，Repo Wiki自动文档",
+      website: "https://qoder.com",
+      logo: "qoder.svg",
+      features: [
+        "Agent模式对话编程",
+        "Quest模式自主完成任务",
+        "Repo Wiki自动文档",
+        "Qwen3-Coder + Claude/GPT",
+        "多语言深度支持"
+      ],
+      pricing: {
+        free: {
+          name: "Free",
+          price: 0,
+          features: ["2周Pro试用", "无限补全"]
+        },
+        pro: {
+          name: "Pro",
+          price: null,
+          features: ["2000 credits", "Quest模式", "Repo Wiki"]
+        }
+      },
+      tags: ["alibaba", "agent", "chinese"],
+      founded: "2025",
+      company: "Alibaba"
+    },
+    {
+      id: "google-antigravity",
+      name: "Google Antigravity",
+      category: "ide",
+      description: "Google推出的Agent-first IDE，基于Gemini 3，支持多Agent并行工作",
+      website: "https://antigravity.dev",
+      logo: "antigravity.svg",
+      features: [
+        "Editor + Manager双视图",
+        "多Agent并行任务",
+        "Gemini 3 Pro/Flash支持",
+        "异步任务执行",
+        "支持Claude/GPT模型"
+      ],
+      pricing: {
+        free: {
+          name: "Preview",
+          price: 0,
+          features: ["公开预览免费"]
+        }
+      },
+      tags: ["google", "agent", "gemini"],
+      founded: "2025",
+      company: "Google"
+    },
+    {
+      id: "opencode",
+      name: "OpenCode",
+      category: "terminal",
+      description: "开源终端AI编码Agent，Go语言构建，支持75+模型提供商，TUI界面",
+      website: "https://opencode.ai",
+      logo: "opencode.svg",
+      features: [
+        "Bubble Tea TUI界面",
+        "支持75+ LLM提供商",
+        "LSP代码智能集成",
+        "多会话管理",
+        "桌面应用支持"
+      ],
+      pricing: {
+        free: {
+          name: "开源免费",
+          price: 0,
+          features: ["完全开源", "自带API密钥"]
+        }
+      },
+      tags: ["open-source", "terminal", "tui"],
+      founded: "2024",
+      company: "OpenCode (开源)"
+    },
+    {
+      id: "droid",
+      name: "Droid",
+      category: "terminal",
+      description: "Factory推出的企业级AI编码Agent，Terminal-Bench排名第一，多专业Droid协作",
+      website: "https://factory.ai",
+      logo: "droid.svg",
+      features: [
+        "Code/Knowledge/Reliability/Product多Droid",
+        "Terminal-Bench第一(58.75%)",
+        "支持Anthropic和OpenAI模型",
+        "IDE/Web/CLI/Slack集成",
+        "组织级记忆系统"
+      ],
+      pricing: {
+        pro: {
+          name: "Pro",
+          price: null,
+          features: ["订阅制", "多模型访问"]
+        }
+      },
+      tags: ["enterprise", "agent", "benchmark"],
+      founded: "2024",
+      company: "Factory"
+    },
+    {
+      id: "rocket",
+      name: "Rocket.new",
+      category: "platform",
+      description: "印度Vibe Coding创业公司，支持Web和移动应用生成，Figma导入，25分钟生成完整应用",
+      website: "https://www.rocket.new",
+      logo: "rocket.svg",
+      features: [
+        "Web + 移动应用生成",
+        "Figma设计导入",
+        "25分钟生成完整应用",
+        "多模型集成(Claude/GPT/Gemini)",
+        "应用商店发布支持"
+      ],
+      pricing: {
+        free: {
+          name: "Trial",
+          price: 0,
+          features: ["1M tokens试用"]
+        },
+        pro: {
+          name: "Pro",
+          price: 25,
+          period: "month",
+          features: ["5M tokens"]
+        }
+      },
+      tags: ["mobile", "fullstack", "indian"],
+      founded: "2025",
+      company: "Rocket.new",
+      funding: "$15M Seed (Salesforce Ventures)"
+    },
+    {
+      id: "magicpath",
+      name: "MagicPath",
+      category: "platform",
+      description: "AI设计转代码平台，无限画布对话式UI设计，支持导出React/HTML/CSS",
+      website: "https://www.magicpath.ai",
+      logo: "magicpath.svg",
+      features: [
+        "无限画布设计",
+        "对话式UI生成",
+        "设计系统库",
+        "导出React/HTML/CSS",
+        "可分享预览链接"
+      ],
+      pricing: {
+        free: {
+          name: "Free",
+          price: 0,
+          features: ["免费试用", "无需信用卡"]
+        }
+      },
+      tags: ["design", "ui", "react"],
+      founded: "2024",
+      company: "MagicPath"
+    },
+    {
+      id: "command",
+      name: "Command",
+      category: "other",
+      description: "Langbase推出的AI Agent开发平台，Prompt转Agent，支持taste-1学习编码风格",
+      website: "https://langbase.com",
+      logo: "command.svg",
+      features: [
+        "Prompt转Production Agent",
+        "taste-1学习编码风格",
+        "支持250+ LLM",
+        "自动生成Agent应用",
+        "可导出自托管"
+      ],
+      pricing: {
+        free: {
+          name: "Free",
+          price: 0,
+          features: ["基础功能"]
+        }
+      },
+      tags: ["agent-builder", "langbase", "taste"],
+      founded: "2024",
+      company: "Langbase"
+    },
+    {
+      id: "taskmaster",
+      name: "Taskmaster AI",
+      category: "other",
+      description: "AI任务管理系统，为Cursor/Windsurf等工具提供项目管理，防止上下文丢失",
+      website: "https://github.com/eyaltoledano/claude-task-master",
+      logo: "taskmaster.svg",
+      features: [
+        "PRD自动生成任务",
+        "支持6个AI提供商",
+        "多角色模型配置",
+        "MCP协议集成",
+        "防止上下文丢失"
+      ],
+      pricing: {
+        free: {
+          name: "开源免费",
+          price: 0,
+          features: ["MIT许可", "自带API密钥"]
+        }
+      },
+      tags: ["open-source", "task-management", "mcp"],
+      founded: "2025",
+      company: "开源社区"
+    },
+    {
+      id: "codeguide",
+      name: "CodeGuide",
+      category: "other",
+      description: "AI项目文档自动化平台，生成PRD、开发流程和优化Prompt，集成主流AI工具",
+      website: "https://www.codeguide.dev",
+      logo: "codeguide.svg",
+      features: [
+        "Codie AI助手",
+        "40+ Starter Kit模板",
+        "PRD自动生成",
+        "集成Cursor/Claude/Copilot",
+        "减少87%编码错误"
+      ],
+      pricing: {
+        free: {
+          name: "Free",
+          price: 0,
+          features: ["基础功能"]
+        },
+        pro: {
+          name: "Pro",
+          price: null,
+          features: ["完整功能", "Credit系统"]
+        }
+      },
+      tags: ["documentation", "prd", "templates"],
+      founded: "2024",
+      company: "CodeGuide"
     }
   ]
 };
