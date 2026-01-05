@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { ExternalLink, Check, Sparkles } from 'lucide-react';
 import type { Tool, Category } from '../types';
 import { clsx } from 'clsx';
@@ -15,17 +16,54 @@ const tagColors: Record<string, string> = {
   enterprise: 'bg-[#0071e3]/10 text-[#0071e3]',
 };
 
+function getDomain(url: string): string {
+  try {
+    return new URL(url).hostname;
+  } catch {
+    return '';
+  }
+}
+
+// 自定义图标 URL 映射（针对 website 是 GitHub 等非官网的情况）
+const customLogoUrls: Record<string, string> = {
+  'claude-code': 'https://www.anthropic.com/favicon.ico',
+  'codex-cli': 'https://openai.com/favicon.ico',
+  'aider': 'https://aider.chat/assets/favicon.ico',
+  'taskmaster': 'https://www.anthropic.com/favicon.ico',
+};
+
+function getFaviconUrl(toolId: string, website: string): string {
+  if (customLogoUrls[toolId]) {
+    return customLogoUrls[toolId];
+  }
+  const domain = getDomain(website);
+  return `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
+}
+
 export function ToolCard({ tool, category }: ToolCardProps) {
+  const [imgError, setImgError] = useState(false);
   const freePrice = tool.pricing.free;
   const proPrice = tool.pricing.pro;
+  const faviconUrl = getFaviconUrl(tool.id, tool.website);
 
   return (
     <div className="group bg-white rounded-2xl p-6 hover:shadow-lg transition-shadow duration-200 dark:bg-[#1c1c1e]">
       {/* Header */}
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-center gap-3">
-          <div className="w-12 h-12 bg-[#f5f5f7] rounded-xl flex items-center justify-center text-xl font-semibold text-[#1d1d1f] dark:bg-[#2c2c2e] dark:text-white">
-            {tool.name.charAt(0)}
+          <div className="w-12 h-12 bg-[#f5f5f7] rounded-xl flex items-center justify-center overflow-hidden dark:bg-[#2c2c2e]">
+            {!imgError ? (
+              <img
+                src={faviconUrl}
+                alt={`${tool.name} logo`}
+                className="w-8 h-8 object-contain"
+                onError={() => setImgError(true)}
+              />
+            ) : (
+              <span className="text-xl font-semibold text-[#1d1d1f] dark:text-white">
+                {tool.name.charAt(0)}
+              </span>
+            )}
           </div>
           <div>
             <h3 className="text-base font-semibold text-[#1d1d1f] group-hover:text-[#0071e3] transition-colors duration-150 dark:text-white">
