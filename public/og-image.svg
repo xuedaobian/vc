@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#f5f5f7"/>
+
+  <!-- Logo Icon -->
+  <rect x="100" y="240" width="80" height="80" rx="16" fill="#0071e3"/>
+  <text x="140" y="295" font-family="-apple-system, SF Pro Display, sans-serif" font-size="36" font-weight="600" fill="white" text-anchor="middle">VC</text>
+
+  <!-- Title -->
+  <text x="200" y="270" font-family="-apple-system, SF Pro Display, sans-serif" font-size="48" font-weight="600" fill="#1d1d1f">Vibe Coding Tools</text>
+
+  <!-- Subtitle -->
+  <text x="200" y="320" font-family="-apple-system, SF Pro Text, sans-serif" font-size="28" fill="#86868b">探索 AI 编码工具的新世界</text>
+
+  <!-- Tagline -->
+  <text x="100" y="420" font-family="-apple-system, SF Pro Text, sans-serif" font-size="22" fill="#6e6e73">发现最适合你的 AI 编程助手</text>
+  <text x="100" y="455" font-family="-apple-system, SF Pro Text, sans-serif" font-size="22" fill="#6e6e73">Cursor · GitHub Copilot · Claude Code · 更多工具</text>
+
+  <!-- Bottom accent line -->
+  <rect x="100" y="530" width="200" height="4" rx="2" fill="#0071e3"/>
+</svg>
