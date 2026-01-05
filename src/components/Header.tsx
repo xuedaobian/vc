@@ -2,18 +2,18 @@ import { Sparkles } from 'lucide-react';
 
 export function Header() {
   return (
-    <header className="border-b border-gray-200 bg-white/80 backdrop-blur-sm sticky top-0 z-50 dark:bg-gray-900/80 dark:border-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <header className="border-b border-black/5 bg-white/80 backdrop-blur-xl sticky top-0 z-50 dark:bg-black/80 dark:border-white/10">
+      <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center">
-              <Sparkles className="w-6 h-6 text-white" />
+            <div className="w-10 h-10 bg-[#0071e3] rounded-xl flex items-center justify-center">
+              <Sparkles className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gray-900 dark:text-white">
+              <h1 className="text-lg font-semibold text-[#1d1d1f] dark:text-white tracking-tight">
                 Vibe Coding Tools
               </h1>
-              <p className="text-sm text-gray-500 dark:text-gray-400">
+              <p className="text-xs text-[#86868b]">
                 发现最好的 AI 编码工具
               </p>
             </div>
@@ -22,7 +22,7 @@ export function Header() {
             href="https://github.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"
+            className="text-sm text-[#0071e3] hover:text-[#0077ed] font-medium transition-colors duration-150"
           >
             GitHub
           </a>

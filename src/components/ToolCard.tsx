@@ -8,11 +8,11 @@ interface ToolCardProps {
 }
 
 const tagColors: Record<string, string> = {
-  popular: 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400',
-  'open-source': 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400',
-  free: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400',
-  agent: 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400',
-  enterprise: 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400',
+  popular: 'bg-[#ff9500]/10 text-[#ff9500]',
+  'open-source': 'bg-[#34c759]/10 text-[#34c759]',
+  free: 'bg-[#30d158]/10 text-[#30d158]',
+  agent: 'bg-[#af52de]/10 text-[#af52de]',
+  enterprise: 'bg-[#0071e3]/10 text-[#0071e3]',
 };
 
 export function ToolCard({ tool, category }: ToolCardProps) {
@@ -20,18 +20,18 @@ export function ToolCard({ tool, category }: ToolCardProps) {
   const proPrice = tool.pricing.pro;
 
   return (
-    <div className="group bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 hover:shadow-xl hover:shadow-indigo-500/10 hover:border-indigo-300 dark:hover:border-indigo-700 transition-all duration-300">
+    <div className="group bg-white rounded-2xl p-6 hover:shadow-lg transition-shadow duration-200 dark:bg-[#1c1c1e]">
       {/* Header */}
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-center gap-3">
-          <div className="w-12 h-12 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-xl flex items-center justify-center text-2xl font-bold text-gray-600 dark:text-gray-300">
+          <div className="w-12 h-12 bg-[#f5f5f7] rounded-xl flex items-center justify-center text-xl font-semibold text-[#1d1d1f] dark:bg-[#2c2c2e] dark:text-white">
             {tool.name.charAt(0)}
           </div>
           <div>
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+            <h3 className="text-base font-semibold text-[#1d1d1f] group-hover:text-[#0071e3] transition-colors duration-150 dark:text-white">
               {tool.name}
             </h3>
-            <p className="text-sm text-gray-500 dark:text-gray-400">
+            <p className="text-sm text-[#86868b]">
               {tool.company}
             </p>
           </div>
@@ -40,7 +40,7 @@ export function ToolCard({ tool, category }: ToolCardProps) {
           href={tool.website}
           target="_blank"
           rel="noopener noreferrer"
-          className="p-2 text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 rounded-lg transition-colors"
+          className="p-2 text-[#86868b] hover:text-[#0071e3] rounded-lg transition-colors duration-150"
         >
           <ExternalLink className="w-5 h-5" />
         </a>
@@ -49,22 +49,22 @@ export function ToolCard({ tool, category }: ToolCardProps) {
       {/* Category Badge */}
       {category && (
         <div className="mb-3">
-          <span className="inline-flex items-center gap-1 px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-md text-xs">
+          <span className="inline-flex items-center px-2.5 py-1 bg-[#f5f5f7] text-[#6e6e73] rounded-lg text-xs font-medium dark:bg-[#2c2c2e] dark:text-[#86868b]">
             {category.name}
           </span>
         </div>
       )}
 
       {/* Description */}
-      <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-2">
+      <p className="text-[#6e6e73] text-sm mb-4 line-clamp-2 leading-relaxed dark:text-[#86868b]">
         {tool.description}
       </p>
 
       {/* Features */}
       <div className="space-y-2 mb-4">
         {tool.features.slice(0, 3).map((feature, index) => (
-          <div key={index} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
-            <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+          <div key={index} className="flex items-start gap-2 text-sm text-[#6e6e73] dark:text-[#86868b]">
+            <Check className="w-4 h-4 text-[#34c759] mt-0.5 flex-shrink-0" />
             <span>{feature}</span>
           </div>
         ))}
@@ -76,8 +76,8 @@ export function ToolCard({ tool, category }: ToolCardProps) {
           <span
             key={tag}
             className={clsx(
-              'px-2 py-0.5 rounded-full text-xs font-medium',
-              tagColors[tag] || 'bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400'
+              'px-2.5 py-0.5 rounded-full text-xs font-medium',
+              tagColors[tag] || 'bg-[#f5f5f7] text-[#6e6e73] dark:bg-[#2c2c2e] dark:text-[#86868b]'
             )}
           >
             {tag}
@@ -86,28 +86,28 @@ export function ToolCard({ tool, category }: ToolCardProps) {
       </div>
 
       {/* Pricing */}
-      <div className="pt-4 border-t border-gray-100 dark:border-gray-800">
+      <div className="pt-4 border-t border-[#f5f5f7] dark:border-[#2c2c2e]">
         <div className="flex items-center justify-between">
           <div>
             {freePrice && freePrice.price === 0 ? (
               <div className="flex items-center gap-1.5">
-                <Sparkles className="w-4 h-4 text-green-500" />
-                <span className="text-sm font-medium text-green-600 dark:text-green-400">
+                <Sparkles className="w-4 h-4 text-[#34c759]" />
+                <span className="text-sm font-medium text-[#34c759]">
                   免费可用
                 </span>
               </div>
             ) : (
-              <span className="text-sm text-gray-500 dark:text-gray-400">
+              <span className="text-sm text-[#86868b]">
                 需付费
               </span>
             )}
           </div>
           {proPrice && proPrice.price && (
             <div className="text-right">
-              <span className="text-lg font-bold text-gray-900 dark:text-white">
+              <span className="text-lg font-semibold text-[#1d1d1f] dark:text-white">
                 ${proPrice.price}
               </span>
-              <span className="text-sm text-gray-500 dark:text-gray-400">
+              <span className="text-sm text-[#86868b]">
                 /{proPrice.period === 'user/month' ? '用户/月' : '月'}
               </span>
             </div>
@@ -117,8 +117,8 @@ export function ToolCard({ tool, category }: ToolCardProps) {
 
       {/* Funding badge */}
       {tool.funding && (
-        <div className="mt-3 pt-3 border-t border-gray-100 dark:border-gray-800">
-          <span className="text-xs text-indigo-600 dark:text-indigo-400 font-medium">
+        <div className="mt-3 pt-3 border-t border-[#f5f5f7] dark:border-[#2c2c2e]">
+          <span className="text-xs text-[#0071e3] font-medium">
             {tool.funding}
           </span>
         </div>

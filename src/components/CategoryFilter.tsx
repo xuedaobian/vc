@@ -19,14 +19,14 @@ interface CategoryFilterProps {
 
 export function CategoryFilter({ categories, selected, onSelect }: CategoryFilterProps) {
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex flex-wrap justify-center gap-2">
       <button
         onClick={() => onSelect(null)}
         className={clsx(
-          'inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all',
+          'inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-150',
           selected === null
-            ? 'bg-indigo-600 text-white shadow-md'
-            : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700'
+            ? 'bg-[#0071e3] text-white'
+            : 'bg-white/60 text-[#1d1d1f] hover:bg-white dark:bg-white/10 dark:text-white dark:hover:bg-white/20'
         )}
       >
         <LayoutGrid className="w-4 h-4" />
@@ -39,10 +39,10 @@ export function CategoryFilter({ categories, selected, onSelect }: CategoryFilte
             key={category.id}
             onClick={() => onSelect(category.id)}
             className={clsx(
-              'inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all',
+              'inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-150',
               selected === category.id
-                ? 'bg-indigo-600 text-white shadow-md'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700'
+                ? 'bg-[#0071e3] text-white'
+                : 'bg-white/60 text-[#1d1d1f] hover:bg-white dark:bg-white/10 dark:text-white dark:hover:bg-white/20'
             )}
           >
             <Icon className="w-4 h-4" />
